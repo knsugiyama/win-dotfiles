@@ -24,7 +24,6 @@
 	default = simple
 [credential]
 	UseHttpPath = true
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 [ghq "CODECOMMIT-URL"]
 	vcs = git
 [fetch]

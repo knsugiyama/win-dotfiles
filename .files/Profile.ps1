@@ -2,7 +2,6 @@ function g {
     ghq.exe look $(ghq list | peco.exe)
 }
 
-#
 function make_init() {
     powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\bin\init\init.ps1
 }

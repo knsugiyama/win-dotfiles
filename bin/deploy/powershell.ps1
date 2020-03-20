@@ -1,5 +1,5 @@
 Write-Host "############"
-Write-Host "powershell coreを導入"
+Write-Host "install powershell"
 Write-Host "############"
 
 $powshellVer = "7.0.0"
