@@ -1,0 +1,16 @@
+### all ignore ###
+/*
+/.**
+
+### not ignore ###
+!/.files/
+!/.files/.gitconfig
+!/.files/.wslconfig
+!/.files/Profile.ps1
+!/bin/
+!/bin/**
+!/.gitignore
+!/download.ps1
+!/LICNSE
+!/README.md
+!/update.ps1
