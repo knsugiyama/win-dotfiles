@@ -24,6 +24,7 @@
 	default = simple
 [credential]
 	UseHttpPath = true
+	helper = manager
 [ghq "CODECOMMIT-URL"]
 	vcs = git
 [fetch]
