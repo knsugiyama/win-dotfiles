@@ -1,0 +1,33 @@
+[core]
+	quotepath = false
+	excludesfile = ~/.gitignore_global
+	preloadindex = true
+	autocrlf = false
+[color]
+	ui = auto
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	typechange = status -s | awk '$1=="T"{print $2}' | xargs git checkout
+	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+	br = switch
+	review = diff origin/master...
+	commit-log = log origin/master..
+	delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+[help]
+	autocorrect = 1
+[user]
+	name = knsugiyama
+	email = knsugiyama15@gmail.com
+[push]
+	default = simple
+[credential]
+	UseHttpPath = true
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+[ghq "CODECOMMIT-URL"]
+	vcs = git
+[fetch]
+	prune = true
+[ghq]
+	root = ~/src
