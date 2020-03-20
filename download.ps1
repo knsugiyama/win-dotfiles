@@ -41,9 +41,10 @@ else {
     mkdir $PS1PROFILE_DIR
 }
 sudo New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:USERPROFILE\.dotfiles\.files\Profile.ps1
-
+# プロファイルを読み込み
+. $env:USERPROFILE\.dotfiles\.files\Profile.ps1
 
 Write-Host "#####"
 Write-Host "後始末"
 Write-Host "#####"
-Remove-Item $env:USERPROFILE\.download.ps1 -Recurse -Force
+Remove-Item $env:USERPROFILE\download.ps1 -Recurse -Force
