@@ -4,6 +4,12 @@ Write-Host "#####"
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
+Write-Host "#####"
+Write-Host "chocolateyをインストールして、gitをインストール"
+Write-Host "#####"
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+choco install git
 
 Write-Host "#####"
 Write-Host "scoopのインストールチェック"
@@ -19,8 +25,6 @@ else {
     set-executionpolicy unrestricted -s cu
     Write-Host "インストールが完了しました。"
 }
-
-scoop install git sudo
 
 Write-Host "#####"
 Write-Host "git clone"
