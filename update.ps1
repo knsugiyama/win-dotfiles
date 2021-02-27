@@ -21,3 +21,4 @@ else {
 Set-Location $CURRENTPATH
 
 scoop update *
+scoop cleanup *
