@@ -22,3 +22,4 @@ Set-Location $CURRENTPATH
 
 scoop update *
 scoop cleanup *
+winget upgrade --all
