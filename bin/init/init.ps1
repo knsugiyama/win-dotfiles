@@ -42,3 +42,8 @@ Remove-Item "$HOME\.gitconfig"
 sudo New-Item -Type SymbolicLink -Path $env:USERPROFILE\.gitconfig -Value $env:USERPROFILE\.dotfiles\.files\.gitconfig
 Remove-Item "$HOME\.wslconfig"
 sudo New-Item -Type SymbolicLink -Path $env:USERPROFILE\.wslconfig -Value $env:USERPROFILE\.dotfiles\.files\.wslconfig
+
+Write-Host "############"
+Write-Host "wsl install"
+Write-Host "############"
+wsl --install -d Ubuntu
