@@ -16,6 +16,7 @@ scoop bucket add versions
 
 $f = (Get-Content scoop-packages) -as [string[]]
 $i=1
+
 foreach ($l in $f) {
     scoop install $l
     $i++
@@ -27,6 +28,7 @@ Write-Host "############"
 
 $f = (Get-Content winget-packages) -as [string[]]
 $i=1
+
 foreach ($l in $f) {
     winget install -e --id $l
     $i++

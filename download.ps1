@@ -31,7 +31,6 @@ Write-Host "git clone"
 Write-Host "#####"
 git clone https://github.com/knsugiyama/win-dotfiles.git $env:USERPROFILE\.dotfiles
 
-
 Write-Host "#####"
 Write-Host "profile.ps1を追加"
 Write-Host "#####"
@@ -44,6 +43,7 @@ if (Test-Path ("$PS1PROFILE_DIR")) {
 else {
     mkdir $PS1PROFILE_DIR
 }
+
 sudo New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:USERPROFILE\.dotfiles\.files\Profile.ps1
 # プロファイルを読み込み
 . $env:USERPROFILE\.dotfiles\.files\Profile.ps1
