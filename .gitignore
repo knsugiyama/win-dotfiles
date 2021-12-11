@@ -10,10 +10,8 @@
 !/bin/
 !/bin/**
 !/config/
-!/config/autohotkey/
-!/config/autohotkey/**
 !/.gitignore
-!/download.ps1
-!/LICNSE
+!/install.ps1
+!/LICENSE
 !/README.md
 !/update.ps1

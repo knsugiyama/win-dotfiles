@@ -5,11 +5,13 @@ Write-Host "#####"
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
 Write-Host "#####"
-Write-Host "chocolateyをインストールして、gitをインストール"
+Write-Host "wingetをインストール"
 Write-Host "#####"
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile winget.msixbundle -UseBasicParsing
+Add-AppxPackage -Path winget.msixbundle
+rm winget.msixbundle
 
-choco install git
+winget install Git.Git
 
 Write-Host "#####"
 Write-Host "scoopのインストールチェック"

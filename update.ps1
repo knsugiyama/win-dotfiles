@@ -22,4 +22,4 @@ Set-Location $CURRENTPATH
 
 scoop update *
 scoop cleanup *
-sudo winget upgrade --all
+winget upgrade --all

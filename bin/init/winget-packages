@@ -2,6 +2,7 @@ Docker.DockerDesktop
 Valve.Steam
 Zoom.Zoom
 Discord.Discord
+Git.Git
 Google.Chrome
 Microsoft.PowerToys
 Microsoft.WindowsTerminal
@@ -14,3 +15,4 @@ LibreOffice.LibreOffice
 Postman.Postman
 NickeManarin.ScreenToGif
 GnuWin32.Wget
+7zip.7zip
