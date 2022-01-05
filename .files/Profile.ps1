@@ -1,10 +1,13 @@
 Import-Module oh-my-posh
 Set-PoshPrompt Parabox
 Import-Module PSReadLine
+Import-Module -Name Terminal-Icons
 
 # Alias
 Set-Alias ll ls
 Set-Alias grep findstr
+Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
+Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 
 # Functions
 function g {
