@@ -11,7 +11,7 @@ Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/d
 Add-AppxPackage -Path winget.msixbundle
 rm winget.msixbundle
 
-winget install Git.Git
+winget install -e -id Git.Git
 
 Write-Host "#####"
 Write-Host "scoopのインストールチェック"
@@ -22,7 +22,7 @@ if (Test-Path $scoopdir) {
     Write-Host "すでにインストールされています。"
 }
 else {
-    Write-Host "インストールします。"
+    Write-Host "scoop をインストールします。"
     Invoke-Expression (new-object net.webclient).downloadstring('https://get.scoop.sh')
     set-executionpolicy unrestricted -s cu
     Write-Host "インストールが完了しました。"
