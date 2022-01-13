@@ -6,9 +6,7 @@
 !/.config/
 !/.config/**
 !/.files/
-!/.files/.gitconfig
-!/.files/.wslconfig
-!/.files/.tigrc
+!/.files/**
 !/etc/
 !/etc/**
 !/nvim/

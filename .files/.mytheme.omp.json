@@ -1,0 +1,155 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "root",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#100e23",
+          "background": "#ffe9aa"
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#100e23",
+          "background": "#ffffff",
+          "properties": {
+            "display_user": false,
+            "display_host": false
+          }
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#100e23",
+          "background": "#91ddff",
+          "properties": {
+            "folder_icon": "\uF115",
+            "folder_separator_icon": " \uE0B1 ",
+            "style": "full"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#193549",
+          "background": "#95ffa4",
+          "properties": {
+            "display_status": true,
+            "display_stash_count": true,
+            "display_upstream_icon": true
+          }
+        },
+        {
+          "type": "exit",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#ff8080",
+          "properties": {
+            "template": "\uE20F"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "python",
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4",
+          "leading_diamond": " \uE0B6",
+          "foreground": "#E4F34A",
+          "background": "#29315A",
+          "properties": {
+            "prefix": "\uE235",
+            "postfix": "",
+            "display_version": false
+          }
+        },
+        {
+          "type": "go",
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4",
+          "leading_diamond": " \uE0B6",
+          "foreground": "#7FD5EA",
+          "background": "#29315A",
+          "properties": {
+            "prefix": "\uFCD1",
+            "postfix": "",
+            "display_version": false
+          }
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4",
+          "leading_diamond": " \uE0B6",
+          "foreground": "#42E66C",
+          "background": "#29315A",
+          "properties": {
+            "prefix": "\uE718",
+            "postfix": "",
+            "display_version": false
+          }
+        },
+        {
+          "type": "ruby",
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4",
+          "leading_diamond": " \uE0B6",
+          "foreground": "#E64747",
+          "background": "#29315A",
+          "properties": {
+            "prefix": "\uE791",
+            "postfix": "",
+            "display_version": false
+          }
+        },
+        {
+          "type": "java",
+          "style": "diamond",
+          "trailing_diamond": "\uE0B4",
+          "leading_diamond": " \uE0B6",
+          "foreground": "#E64747",
+          "background": "#29315A",
+          "properties": {
+            "prefix": "\uE738",
+            "postfix": "",
+            "display_version": false
+          }
+        },
+        {
+          "type": "time",
+          "style": "powerline"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#007ACC",
+          "properties": {
+            "prefix": "",
+            "text": "\u276F"
+          }
+        }
+      ]
+    }
+  ],
+  "final_space": false
+}
