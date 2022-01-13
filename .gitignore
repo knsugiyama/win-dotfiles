@@ -3,15 +3,19 @@
 /.**
 
 ### not ignore ###
+!/.config/
+!/.config/**
 !/.files/
 !/.files/.gitconfig
 !/.files/.wslconfig
-!/.files/Profile.ps1
-!/bin/
-!/bin/**
-!/config/
+!/.files/.tigrc
+!/etc/
+!/etc/**
+!/nvim/
+!/nvim/**
 !/.gitignore
 !/install.ps1
 !/LICENSE
+!/Profile.ps1
 !/README.md
 !/update.ps1

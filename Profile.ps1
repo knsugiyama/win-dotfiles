@@ -15,11 +15,11 @@ function g {
 }
 
 function make_init() {
-    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\bin\init\init.ps1
+    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\etc\init.ps1
 }
 
 function make_deploy() {
-    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\bin\deploy\deploy.ps1
+    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\etc\deploy.ps1
 }
 
 function make_install() {
@@ -28,7 +28,8 @@ function make_install() {
 }
 
 function make_update() {
-    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\update.ps1
+    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\etc\update.ps1
+    make_deploy
 }
 
 # psreadline

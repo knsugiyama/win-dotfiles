@@ -7,9 +7,10 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 Write-Host "#####"
 Write-Host "wingetをインストール"
 Write-Host "#####"
+
 Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle -OutFile winget.msixbundle -UseBasicParsing
 Add-AppxPackage -Path winget.msixbundle
-rm winget.msixbundle
+Remove-Item winget.msixbundle
 
 winget install -e -id Git.Git
 
@@ -31,6 +32,7 @@ else {
 Write-Host "#####"
 Write-Host "git clone"
 Write-Host "#####"
+
 git clone https://github.com/knsugiyama/win-dotfiles.git $env:USERPROFILE\.dotfiles
 
 Write-Host "#####"
@@ -53,4 +55,5 @@ sudo New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:U
 Write-Host "#####"
 Write-Host "後始末"
 Write-Host "#####"
+
 Remove-Item $env:USERPROFILE\download.ps1 -Recurse -Force

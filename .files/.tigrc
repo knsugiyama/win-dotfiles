@@ -1,0 +1,80 @@
+###
+# 外観設定
+###
+
+# main view の左端にコミットIDを表示する
+set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+
+# blame view の行数表示をON、intervalを1に
+set blame-view  = date:default author:email-user id:yes,color line-number:yes,interval=1 text
+
+# Pager系の行数表示をON、intervalを1に (default: line-number:no,interval=5)
+set pager-view  = line-number:yes,interval=1 text
+set stage-view  = line-number:yes,interval=1 text
+set log-view    = line-number:yes,interval=1 text
+set blob-view   = line-number:yes,interval=1 text
+set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
+
+# 横分割に強制する
+set vertical-split = no
+# utf-8 文字で画面描画する (~でトグル)
+set line-graphics = utf-8
+# タブサイズ
+set tab-size = 4
+# 空白無視 (status-view では表示するが diff-view では無視する) (W でトグル)
+set ignore-space = at-eol
+# 検索時に大文字小文字を無視する (default: false)
+set ignore-case = true
+# 水平分割したウィンドウの下画面サイズを % で指定（行数指定も可）
+set split-view-height = 80%
+# マージ diff を表示する
+set diff-options = -m --first-parent
+# マウスを有効にする
+set mouse = true
+# '+行数' の形で Editor に行番号を引数として渡す
+set editor-line-number = yes
+# リフレッシュするタイミング
+set refresh-mode = auto
+
+######
+# カラー設定
+######
+# diff-view で境界が見やすくなるように変更
+color  diff-header       default magenta
+color  diff-chunk        black   white
+
+######
+# 各種 Git コマンド割り当て
+######
+# 外部コマンドを指定するには、外部コマンドの前に !, ?, @ のいずれかを付ける。! は外部コマンドの即時実行、? は実行前にコマンド内容の確認が出る、@ はバックグラウンド実行して出力を捨てる
+
+# reflogをpagerで表示
+bind generic W :!git reflog
+
+# Pで現在のブランチへpush
+bind generic P ?@!git push origin %(repo:head)
+# Lで現在のブランチからpull
+bind generic L ?@!git pull origin %(repo:head)
+
+bind main F ?git fetch
+bind main S ?git stash save "%(prompt Enter stash comment: )"
+bind main ! ?git reset --soft HEAD^
+# bind main x @bash -c "echo -n '%(commit)' | clip"
+# ! で revert
+bind main ! ?git revert %(commit)
+
+# Nで、指定ブランチをもとに新規ブランチを作成
+bind refs N ?git checkout -b "%(prompt Enter new branch name: )" %(branch)
+# Mで、指定ブランチの内容をマージ
+bind refs M ?git merge %(branch)
+# Hで、指定ブランチをWebで表示
+bind refs H !git-browse-remote %(branch)
+
+# Dでstatus viewのuntracked fileを削除できるようにする
+bind status D ?@rm %(file)
+
+# リポジトリのGitHubを表示
+bind generic ^ @hub browse
+
+# 選択したbranchのcompare画面
+bind branch [ @hub compare %(branch)

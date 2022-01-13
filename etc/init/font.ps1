@@ -1,9 +1,5 @@
-Write-Host "#####"
-Write-Host "フォントの設定"
-Write-Host "#####"
-
 $hkVer = "v2.2.3"
-$hk = "HackGenNerd" + $cicaVer
+$hk = "HackGenNerd" + $hkVer
 # ダウンロードするファイルのURL
 $target_url = "https://github.com/yuru7/HackGen/releases/download/$hkVer/$hk.zip"
 # ローカルの保存先
