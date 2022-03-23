@@ -11,16 +11,18 @@ Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 
 # Functions
-function g {
+function prj {
     ghq.exe look $(ghq list | peco.exe)
 }
 
 function make_init() {
-    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\etc\init.ps1
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force
+    powershell $env:USERPROFILE\.dotfiles\etc\init.ps1
 }
 
 function make_deploy() {
-    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\etc\deploy.ps1
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force
+    powershell $env:USERPROFILE\.dotfiles\etc\deploy.ps1
 }
 
 function make_install() {
@@ -29,7 +31,8 @@ function make_install() {
 }
 
 function make_update() {
-    powershell -ExecutionPolicy Bypass -File $env:USERPROFILE\.dotfiles\etc\update.ps1
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force
+    powershell $env:USERPROFILE\.dotfiles\etc\update.ps1
     make_deploy
 }
 

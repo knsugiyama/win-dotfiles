@@ -48,7 +48,7 @@ else {
     mkdir $PS1PROFILE_DIR
 }
 
-sudo New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:USERPROFILE\.dotfiles\.files\Profile.ps1
+New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:USERPROFILE\.dotfiles\.files\Profile.ps1
 # プロファイルを読み込み
 . $env:USERPROFILE\.dotfiles\.files\Profile.ps1
 
