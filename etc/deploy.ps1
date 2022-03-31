@@ -1,3 +1,5 @@
+# gpeditから、ユーザーにシンボリック作成権限を付与する必要あり
+# Computer configuration → Windows Settings → Security Settings → Local Policies → User Rights Assignment → Create symbolic links
 Write-Host "#####"
 Write-Host "symbolic link"
 Write-Host "#####"
@@ -17,7 +19,7 @@ if (-not (Test-Path ("$PS1PROFILE_DIR"))) {
 }
 New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:USERPROFILE\.dotfiles\Profile.ps1 -Force
 # プロファイルを読み込み
-. $PS1PROFILE_DIR\Profile.ps1
+# . $PS1PROFILE_DIR\Profile.ps1
 
 Write-Host "#####"
 Write-Host "nvim"
