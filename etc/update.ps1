@@ -20,7 +20,8 @@ else {
 
 Set-Location $CURRENTPATH
 
+scoop update
 scoop update *
 scoop cleanup *
-winget upgrade --all
+winget upgrade --all --include-unknown
 Update-Module
