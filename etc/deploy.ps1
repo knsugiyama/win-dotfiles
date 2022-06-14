@@ -18,11 +18,3 @@ if (-not (Test-Path ("$PS1PROFILE_DIR"))) {
     mkdir $PS1PROFILE_DIR
 }
 New-Item -Type SymbolicLink -Path $PS1PROFILE_DIR\Profile.ps1 -Value $env:USERPROFILE\.dotfiles\Profile.ps1 -Force
-
-Write-Host "#####"
-Write-Host "nvim"
-Write-Host "#####"
-$NVIM_DIR = "$env:USERPROFILE\AppData\Local\nvim"
-if (Test-Path ("$NVIM_DIR")) {
-    New-Item -Type SymbolicLink -Path $NVIM_DIR -Value $env:USERPROFILE\.dotfiles\.config\nvim -Force
-}
