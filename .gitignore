@@ -5,6 +5,8 @@
 ### not ignore ###
 !/.files/
 !/.files/**
+!/misc/
+!/misc/**
 !/etc/
 !/etc/**
 !/nvim/
