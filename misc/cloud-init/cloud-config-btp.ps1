@@ -22,6 +22,7 @@ packages:
   - gnupg
   - lsb-release
   - build-essential
+  - unzip
 
 runcmd:
   # ユーザー作成
@@ -35,7 +36,6 @@ runcmd:
   - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
   - sudo apt-get update
   - sudo apt-get install cf8-cli
-  # AWS Cli 追加(Linux x86)
   - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
   - unzip awscliv2.zip
   - sudo ./aws/install
