@@ -2,4 +2,4 @@ curl
 gcc
 ghq
 jq
-peco
+fzf

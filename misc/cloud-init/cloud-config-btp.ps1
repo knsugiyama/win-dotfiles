@@ -3,7 +3,7 @@
 $AUTHORIZED_KEYS = Get-Content $HOME/.ssh/multipass_docker.pub
 
 # ヒアドキュメントでファイルを作成する
-Set-Content -Path "$HOME/multipass_docker.yaml" -Force -Value @"
+Set-Content -Path "$HOME/multipass_btp.yaml" -Force -Value @"
 locale: en_US.UTF8
 timezone: Asia/Tokyo
 package_upgrade: true
@@ -24,9 +24,19 @@ packages:
   - build-essential
 
 runcmd:
+  # ユーザー作成
   - sudo curl -fsSL https://get.docker.com | sudo bash
   - sudo systemctl enable docker
   - sudo systemctl enable -s HUP ssh
   - sudo groupadd docker
   - sudo usermod -aG docker ubuntu
+  # CF Cli 追加
+  - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add
+  - echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+  - sudo apt-get update
+  - sudo apt-get install cf8-cli
+  # AWS Cli 追加(Linux x86)
+  - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  - unzip awscliv2.zip
+  - sudo ./aws/install
 "@

@@ -1,0 +1,6 @@
+multipass launch --name docker-vm --cpus 4 --mem 8G --disk 20G --cloud-init multipass_docker.yaml 20.04
+
+# 初回だけ
+multipass set local.privileged-mounts=true
+
+multipass mount .\src docker:/home/ubuntu/src
