@@ -3,15 +3,18 @@
 /.**
 
 ### not ignore ###
-!/.files/
-!/.files/**
 !/misc/
 !/misc/**
 !/etc/
 !/etc/**
 !/nvim/
 !/nvim/**
+!/.gitconfig
 !/.gitignore
+!/.mytheme.omp.json
+!/.tigrc
+!/.vimrc
+!/.wslconfig
 !/install.ps1
 !/LICENSE
 !/Profile.ps1
