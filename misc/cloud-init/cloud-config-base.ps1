@@ -24,6 +24,7 @@ packages:
   - build-essential
 
 runcmd:
+  # ユーザー作成
   - sudo curl -fsSL https://get.docker.com | sudo bash
   - sudo systemctl enable docker
   - sudo systemctl enable -s HUP ssh
